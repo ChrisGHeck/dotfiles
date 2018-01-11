@@ -1,6 +1,7 @@
 # Blacklist everything
 *
 !.gitignore
+!.gitattributes
 
 # Whilelist config files
 !.gitconfig
