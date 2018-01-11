@@ -1,0 +1,21 @@
+shell rm Downloads/*
+shell rm Downloads/* -rf
+
+shell mkdir Music Videos Documents
+shell mkdir Repositories
+shell mkdir Documents/notes
+shell mv shell* Documents/notes
+shell mv Machines VMs
+shell mv VMs Machines
+shell feh --bg-scale wallpaper2.jpg
+shell feh --set-bg wallpaper.jpg
+shell feh --bg-scale wallpaper.jpg
+shell touch config
+open_with vim
+shell touch scope.sh
+shell chmod u+x scope.sh
+shell rm scope.sh config
+shell mkdir -p ~/Books/
+shell mv progit.pdf ~/Books
+rename progit.pdf
+find 

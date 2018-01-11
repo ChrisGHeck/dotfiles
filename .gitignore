@@ -1,0 +1,24 @@
+# Blacklist everything
+*
+!.gitignore
+
+# Whilelist config files
+!.gitconfig
+!.vimrc
+!.Xresources
+!.xinitrc
+
+!.calcurse/
+# Doesn't work?
+# !.calcurse/{conf,keys}
+!.calcurse/conf
+!.calcurse/keys
+
+!.scripts/
+!.scripts/**
+
+!.config/
+!.config/*/
+!.config/i3/**
+!.config/polybar/**
+!.config/ranger/**

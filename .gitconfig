@@ -1,0 +1,13 @@
+[user]
+	name = Christian Heck
+	email = ChrisGHeck@hushmail.com
+[branch]
+	autosetuprebase = always
+[color]
+	ui = true
+	status = auto
+	branch = auto
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff

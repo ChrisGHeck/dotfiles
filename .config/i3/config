@@ -1,0 +1,194 @@
+
+###---VARS---###
+set $mod Mod4
+set $script ~/.scripts
+
+###---PROGRAMS---###
+#bindsym $mod+w exec
+#bindsym $mod+Shift+w exec
+
+#bindsym $mod+e exec
+#bindsym $mod+Shift+e exec
+
+#bindsym $mod+r exec
+#bindsym $mod+Shift+r exec
+
+bindsym $mod+t exec urxvtc -e vim
+#bindsym $mod+Shift+t exec
+
+#bindsym $mod+a exec
+#bindsym $mod+Shift+a exec
+
+bindsym $mod+s exec thunderbird
+bindsym $mod+Shift+s exec urxvtc -e calcurse
+
+bindsym $mod+d exec rofi -show run
+#bindsym $mod+Shift+d exec
+
+bindsym $mod+f exec urxvtc -e ranger
+#bindsym $mod+Shift+f exec
+
+#bindsym $mod+g exec
+#bindsym $mod+Shift+g exec
+
+#bindsym $mod+z exec
+#bindsym $mod+Shift+z exec
+
+#bindsym $mod+x exec
+#bindsym $mod+Shift+x exec
+
+bindsym $mod+c exec urxvtc
+#bindsym $mod+Shift+c exec
+
+bindsym $mod+v exec urxvtc -e htop
+#bindsym $mod+Shift+v exec
+
+bindsym $mod+b exec firefox
+#bindsym $mod+Shift+b exec
+
+###---WINDOW-MGMT---###
+# Exit window
+bindsym $mod+q kill
+bindsym $mod+Shift+q kill
+
+# Change window focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move window
+bindsym $mod+n move left
+bindsym $mod+m move down
+bindsym $mod+comma move up
+bindsym $mod+period move right
+
+# Resize window
+bindsym $mod+y resize grow width 10 px or 10 ppt
+bindsym $mod+u resize grow height 10 px or 10 ppt
+bindsym $mod+i resize shrink height 10 px or 10 ppt
+bindsym $mod+o resize shrink width 10 px or 10 ppt
+
+# Window insert direction
+bindsym $mod+semicolon split h
+bindsym $mod+apostrophe split v
+
+# Fullscreen
+bindsym $mod+Return fullscreen toggle
+
+# Window layout modes
+bindsym $mod+bracketleft layout stacking
+bindsym $mod+bracketright layout tabbed
+bindsym $mod+backslash layout toggle
+
+# Floating window management
+floating_modifier $mod
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+# Focus parent/child container
+bindsym $mod+p focus parent
+bindsym $mod+slash focus child
+
+# Gaps
+gaps inner 10
+bindsym $mod+minus gaps inner current minus 10
+bindsym $mod+equal gaps inner current plus 10
+bindsym $mod+Shift+minus gaps inner all minus 10
+bindsym $mod+Shift+equal gaps inner all plus 10
+
+###---WORKSPACE-MGMT---###
+# Workspace names
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws0 10
+
+# Change workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+###---DISPLAY/POWER-MGMT---###
+# Lock screen, suspend, hibernate options
+bindsym $mod+F1 exec --no-startup-id i3lock
+#bindsym $mod+F2 exec
+#bindsym $mod+F3 exec
+#bindsym $mod+F4 exec
+
+bindsym $mod+Shift+F1 exec --no-startup-id "i3-nagbar -t warning -m 'Power Menu' -b 'Logout' 'i3-msg exit'"
+
+# Display output
+bindsym $mod+F5 exec --no-startup-id $script/screenlayout/laptop-only.sh
+bindsym $mod+Shift+F5 exec --no-startup-id $script/screenlayout/hdmi-only.sh
+bindsym $mod+F6 exec --no-startup-id $script/screenlayout/extend-laptop-primary.sh
+bindsym $mod+Shift+F6 exec --no-startup-id $script/screenlayout/extend-hdmi-primary.sh
+bindsym $mod+F7 exec --no-startup-id $script/screenlayout/duplicate.sh
+bindsym $mod+F8 exec arandr
+
+###---AUDIO---###
+# Pulseaudio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+
+# Media player controls
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+
+###---OTHER-BINDS---###
+# Restart/reload i3
+bindsym $mod+F11 reload
+bindsym $mod+F12 restart
+
+###---STYLING---###
+font pango:monospace 8
+for_window [class="^.*"] border pixel
+
+###---STARTUP---###
+# Set default monitor layout
+exec --no-startup-id $script/screenlayout/hdmi-only.sh
+
+# Bar
+exec --no-startup-id polybar main
+
+# Compositor
+exec --no-startup-id compton
+
+# Wallpaper
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+
+# Terminal daemon
+exec --no-startup-id urxvtd --quiet --opendisplay --fork
+
+# Torrent daemon
+exec --no-startup-id transmission-daemon
+
+# IRC client
+exec --no-startup-id tmux new -s irc irssi
