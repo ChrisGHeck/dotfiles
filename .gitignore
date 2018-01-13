@@ -15,6 +15,9 @@
 !.calcurse/conf
 !.calcurse/keys
 
+!.irssi/
+!.irssi/**
+
 !.scripts/
 !.scripts/**
 
@@ -23,3 +26,4 @@
 !.config/i3/**
 !.config/polybar/**
 !.config/ranger/**
+!.config/neofetch/**
