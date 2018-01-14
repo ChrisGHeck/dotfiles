@@ -22,10 +22,8 @@ set smartindent
 set shiftwidth=4
 set tabstop=4
 
-" Soft tabs (spaces)
-"set expandtab
-"set shiftwidth=4
-"set softtabstop=4
+" Language specific indentation
+filetype plugin indent on
 
 " Happy accident management
 set undolevels=100
@@ -34,7 +32,6 @@ set backspace=indent,eol,start
 " Misc
 set ruler
 set showmatch
-set colorcolumn=80
 set bg=dark
 colo elflord
 set noerrorbells
