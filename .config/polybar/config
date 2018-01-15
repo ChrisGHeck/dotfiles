@@ -32,7 +32,7 @@ modules-left = date volume battery xkeyboard
 modules-center = i3
 modules-right = filesystem memory cpu temperature
 
-tray-position = left
+tray-position = right
 
 scroll-up = i3-msg workspace next_on_output
 scroll-down = i3-msg workspace prev_on_output
