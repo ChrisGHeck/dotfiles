@@ -20,8 +20,7 @@ line-size = 3
 line-color = #f00
 
 padding = 2
-module-margin = 2
-
+module-margin = 3
 
 font-0 = fixed:pixelsize=10;1
 font-1 = fontawesome:pixelsize=10;1
@@ -49,13 +48,15 @@ format-underline = #0a6cf5
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <ramp-volume> <bar-volume>
 label-volume-foreground = ${root.foreground}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
-format-muted-prefix = " "
 format-muted-foreground = ${color.foreground-alt}
-label-muted = sound muted
+format-muted-prefix = " "
+label-muted = muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -78,26 +79,26 @@ bar-volume-empty-foreground = ${color.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-full-at = 98
+full-at = 96
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = 
 format-full-prefix-foreground = ${color.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${color.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${color.foreground-alt}
 animation-charging-framerate = 750
 
@@ -105,12 +106,7 @@ animation-charging-framerate = 750
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${color.foreground-alt}
-format-prefix-underline = ${color.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${color.secondary}
+label-layout =
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -153,7 +149,7 @@ label-urgent-padding = 2
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 5
 
 mount-0 = /
 mount-1 = /home
@@ -166,7 +162,7 @@ label-unmounted-foreground = ${color.foreground-alt}
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${color.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
