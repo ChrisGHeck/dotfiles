@@ -187,6 +187,7 @@ bindsym $mod+F12 restart
 ###---STYLING---###
 font pango:monospace 8
 for_window [class="^.*"] border pixel
+hide_edge_borders smart
 
 ###---STARTUP---###
 # Set default monitor layout
