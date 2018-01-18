@@ -23,7 +23,7 @@ set $launcher rofi -show run
 set $term urxvtc
 set $editor urxvtc -e vim
 set $fileman urxvtc -e ranger
-set $taskmon urxvt -e htop
+set $taskmon urxvtc -e htop
 
 # Communication
 set $irc urxvtc -e irssi
