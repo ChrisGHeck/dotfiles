@@ -23,10 +23,14 @@
 
 !.vim/
 !.vim/**
+.vim/autoload/**
+.vim/plugged/**
 
 !.config/
 !.config/*/
 !.config/i3/**
 !.config/polybar/**
 !.config/ranger/**
+.config/ranger/bookmarks
+.config/ranger/history
 !.config/neofetch/**

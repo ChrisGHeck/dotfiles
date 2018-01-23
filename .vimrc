@@ -25,13 +25,21 @@ set tabstop=4
 " Language specific indentation
 filetype plugin indent on
 
-" Happy accident management
+" Backspace
 set undolevels=100
 set backspace=indent,eol,start
+
+" Plugins (Using Plug)
+call plug#begin('~/.vim/plugged')
+
+" Wal Colorschemes
+Plug 'dylanaraps/wal.vim'
+
+call plug#end()
 
 " Misc
 set ruler
 set showmatch
 set bg=dark
-colo elflord
+colo wal
 set noerrorbells

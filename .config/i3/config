@@ -34,6 +34,25 @@ set $chat discord
 set $browser firefox
 set $calendar urxvtc -e calcurse
 
+# Colors
+set_from_resource $color0 i3wm.color0 #f0f0f0
+set_from_resource $color1 i3wm.color1 #f0f0f0
+set_from_resource $color2 i3wm.color2 #f0f0f0
+set_from_resource $color3 i3wm.color3 #f0f0f0
+set_from_resource $color4 i3wm.color4 #f0f0f0
+set_from_resource $color5 i3wm.color5 #f0f0f0
+set_from_resource $color6 i3wm.color6 #f0f0f0
+set_from_resource $color7 i3wm.color7 #f0f0f0
+set_from_resource $color8 i3wm.color8 #f0f0f0
+set_from_resource $color9 i3wm.color9 #f0f0f0
+set_from_resource $color10 i3wm.color10 #f0f0f0
+set_from_resource $color11 i3wm.color11 #f0f0f0
+set_from_resource $color12 i3wm.color12 #f0f0f0
+set_from_resource $color13 i3wm.color13 #f0f0f0
+set_from_resource $color14 i3wm.color14 #f0f0f0
+set_from_resource $color15 i3wm.color15 #f0f0f0
+
+
 ###---PROGRAMS---###
 #bindsym $mod+w exec
 #bindsym $mod+Shift+w exec
@@ -189,6 +208,14 @@ font pango:monospace 8
 for_window [class="^.*"] border pixel
 hide_edge_borders smart
 
+# class					border		background		text		indicator		child_border
+client.focused			$color2		$color2			$color7		$color2			$color2
+client.focused_inactive $color2		$color2			$color7		$color2			$color2
+client.unfocused		$color2		$color2			$color7		$color2			$color2
+client.urgent			$color2		$color2			$color7		$color2			$color2
+client.placeholder		$color2		$color2			$color7		$color2			$color2
+client.background		$color2
+
 ###---STARTUP---###
 # Set default monitor layout
 exec --no-startup-id $script/screenlayout/hdmi-only.sh
@@ -199,8 +226,9 @@ exec --no-startup-id polybar main
 # Compositor
 exec --no-startup-id compton
 
-# Wallpaper
-exec --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/wallpaper.jpg
+# Wallpaper and Colorscheme
+# exec --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/wallpaper.jpg
+exec --no-startup-id wal -a 90 -i ~/Pictures/wallpaper2.png
 
 # Terminal daemon
 exec --no-startup-id urxvtd --quiet --opendisplay --fork
