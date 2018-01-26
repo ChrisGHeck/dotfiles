@@ -8,6 +8,8 @@
 !.vimrc
 !.Xresources
 !.xinitrc
+!.bash_profile
+!.Xmodmap
 
 !.calcurse/
 # Doesn't work?

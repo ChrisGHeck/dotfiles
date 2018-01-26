@@ -1,0 +1,8 @@
+! Swap caps lock and esc for easier vimming
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+
+! Bind menu button to super for laptop keyboards without a right super button
+keycode 135 = Super_R
