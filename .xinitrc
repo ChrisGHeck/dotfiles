@@ -7,32 +7,18 @@ sysmodmap=/etc/X11/xinit/Xmodmap
 
 # merge in defaults and keymaps
 
+# Set xmodmap/xresources system defaults
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
 
+# Set xmodmap/xresources user preferences
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
