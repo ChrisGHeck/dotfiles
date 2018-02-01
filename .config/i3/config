@@ -34,6 +34,10 @@ set $chat discord
 set $browser firefox
 set $calendar urxvtc -e calcurse
 
+# Media
+set $mpdclient urxvtc -e ncmpcpp
+set $mediaplayer smplayer
+
 # Colors
 set_from_resource $color0 i3wm.color0 #f0f0f0
 set_from_resource $color1 i3wm.color1 #f0f0f0
@@ -57,7 +61,7 @@ set_from_resource $color15 i3wm.color15 #f0f0f0
 #bindsym $mod+w exec
 #bindsym $mod+Shift+w exec
 
-#bindsym $mod+e exec
+bindsym $mod+e exec $taskmon
 #bindsym $mod+Shift+e exec
 
 #bindsym $mod+r exec
@@ -90,8 +94,8 @@ bindsym $mod+Shift+x exec $chat
 bindsym $mod+c exec $term
 #bindsym $mod+Shift+c exec
 
-bindsym $mod+v exec $taskmon
-#bindsym $mod+Shift+v exec
+bindsym $mod+v exec $mpdclient
+bindsym $mod+Shift+v exec $mediaplayer
 
 bindsym $mod+b exec $browser
 #bindsym $mod+Shift+b exec
@@ -226,6 +230,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioStop exec --no-startup-id mpc stop
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
+
 ###---OTHER-BINDS---###
 # Restart/reload i3
 bindsym $mod+F11 reload
@@ -252,3 +261,4 @@ exec --no-startup-id compton #compositor
 exec --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/wallpaper2.png
 exec --no-startup-id urxvtd --quiet --opendisplay --fork #terminal daemon
 exec --no-startup-id transmission-daemon #torrent daemon
+exec --no-startup-id mpd #music player
