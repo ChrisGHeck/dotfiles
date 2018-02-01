@@ -1,0 +1,6 @@
+
+folder-hook 'hushmail-ChrisGHeck' 'source ~/.mutt/accounts/hushmail-ChrisGHeck'
+
+source ~/.mutt/accounts/hushmail-ChrisGHeck
+
+color normal default default

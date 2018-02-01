@@ -15,6 +15,9 @@
 !.ncmpcpp/
 !.ncmpcpp/config
 
+!.mutt/
+!.mutt/muttrc
+
 !.calcurse/
 # Doesn't work?
 # !.calcurse/{conf,keys}
