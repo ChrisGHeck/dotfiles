@@ -19,8 +19,6 @@
 !.mutt/muttrc
 
 !.calcurse/
-# Doesn't work?
-# !.calcurse/{conf,keys}
 !.calcurse/conf
 !.calcurse/keys
 
