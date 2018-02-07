@@ -35,7 +35,7 @@ font-1 = fontawesome:pixelsize=10;3
 modules-left = i3 
 #modules-center = memory cpu temperature
 modules-center = mpd
-modules-right = volume battery network date
+modules-right = volume battery wireless-network date
 
 tray-position = right
 
@@ -47,9 +47,11 @@ type = internal/date
 
 format-overline = ${xrdb:color7:#222}
 
-date = %a. %b. %d %Y
+;date = %a. %b. %d %Y
+;time = %I:%M:%S %p %Z
+date = %D
 time = %I:%M:%S %p %Z
-label = %date% at %time%
+label = %date% - %time%
 
 [module/volume]
 type = internal/volume
@@ -141,9 +143,9 @@ label-mode-background = ${color.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${color.background-alt}
+label-focused-background = ${color.background}
 label-focused-underline = ${color.primary}
-label-focused-overline = ${color.primary}
+label-focused-overline = ${xrdb:color7:#222}
 label-focused-padding = 3
 
 ; unfocused = Inactive workspace on any monitor
@@ -211,21 +213,25 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${color.foreground-alt}
 
-[module/network]
+[module/wireless-network]
 type = internal/network
 interface = wlp8s0
 interval = 3
 
 format-connected-prefix = " "
+format-connected-overline = ${xrdb:color7:#222}
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
 label-connected = %local_ip%
 
+ramp-signal-0 =  
+
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-overline = ${xrdb:color7:#222}
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${color.foreground-alt}
 
 [module/mpd]
 type = internal/mpd
 host = localhost
+
+format-online-overline = ${xrdb:color10:#222}
