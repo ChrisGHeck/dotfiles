@@ -1,4 +1,4 @@
-URxvt*font:		xft:monospace:size=10
+URxvt*font:			xft:monospace:size=10
 
 URxvt*scrollBar:	false
-URxvt*depth: 32
+URxvt*depth: 		32

@@ -37,7 +37,7 @@ modules-left = i3
 modules-center = mpd
 modules-right = volume battery wireless-network date
 
-tray-position = right
+tray-position = off
 
 scroll-up = i3-msg workspace next_on_output
 scroll-down = i3-msg workspace prev_on_output

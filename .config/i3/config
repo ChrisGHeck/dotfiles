@@ -240,9 +240,9 @@ bindsym $mod+F8 exec arandr
 ###---AUDIO---###
 #{{{
 # Pulseaudio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioStop exec --no-startup-id mpc stop
@@ -275,8 +275,8 @@ client.background		$color2
 exec --no-startup-id $script/screenlayout/hdmi-only.sh #set monitor layout
 exec --no-startup-id polybar main #bar
 exec --no-startup-id compton #compositor
-#exec --no-startup-id "'urxvtc -e 'wal -a 90 -i ~/Pictures/wallpaper3.jpg'" #colorscheme+wallpaper
-exec --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/wallpaper3.jpg
+exec --no-startup-id wal -a 90 -i ~/Pictures/wallpaper.jpg
+#exec --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/wallpaper3.jpg
 exec --no-startup-id urxvtd --quiet --opendisplay --fork #terminal daemon
 exec --no-startup-id transmission-daemon #torrent daemon
 exec --no-startup-id mpd #music player

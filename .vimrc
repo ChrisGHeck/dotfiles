@@ -30,16 +30,16 @@ set undolevels=100
 set backspace=indent,eol,start
 
 " Plugins (Using Plug)
-call plug#begin('~/.vim/plugged')
+""call plug#begin('~/.vim/plugged')
 
 " Wal Colorschemes
-Plug 'dylanaraps/wal.vim'
+""Plug 'dylanaraps/wal.vim'
 
-call plug#end()
+""call plug#end()
 
 " Misc
 set ruler
 set showmatch
 set bg=dark
-colo wal
+colo elflord
 set noerrorbells
