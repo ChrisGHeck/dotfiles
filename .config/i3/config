@@ -22,7 +22,7 @@ set $ws9 9
 set $ws0 10
 
 # Default Programs
-set $launcher rofi -show run
+set $launcher rofi -show drun
 
 # System Utilities
 set $term urxvtc
@@ -41,7 +41,7 @@ set $calendar urxvtc -e calcurse
 
 # Media
 set $mpdclient urxvtc -e ncmpcpp
-set $mediaplayer smplayer
+set $mediaplayer vlc
 
 # Colors
 set_from_resource $color0 i3wm.color0 #f0f0f0
@@ -174,10 +174,10 @@ bindsym $mod+slash focus child
 
 # Gaps
 gaps inner 10
-bindsym $mod+minus gaps inner current minus 10
-bindsym $mod+equal gaps inner current plus 10
-bindsym $mod+Shift+minus gaps inner all minus 10
-bindsym $mod+Shift+equal gaps inner all plus 10
+bindsym $mod+minus gaps inner current plus 10
+bindsym $mod+equal gaps inner current minus 10
+bindsym $mod+Shift+minus gaps inner all plus 10
+bindsym $mod+Shift+equal gaps inner all minus 10
 #}}}
 
 ###---WORKSPACE-MGMT---###

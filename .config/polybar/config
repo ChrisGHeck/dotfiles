@@ -32,9 +32,9 @@ module-margin = 1
 font-0 = fixed:pixelsize=10;3
 font-1 = fontawesome:pixelsize=10;3
 
-modules-left = i3 
+modules-left = i3 mpd
 #modules-center = memory cpu temperature
-modules-center = mpd
+modules-center = xwindow
 modules-right = volume battery wireless-network date
 
 tray-position = off
@@ -42,6 +42,11 @@ tray-position = off
 scroll-up = i3-msg workspace next_on_output
 scroll-down = i3-msg workspace prev_on_output
 
+[module/xwindow]
+type = internal/xwindow
+
+label = %title%
+label-maxlen = 50
 [module/date]
 type = internal/date
 
@@ -218,7 +223,6 @@ type = internal/network
 interface = wlp8s0
 interval = 3
 
-format-connected-prefix = " "
 format-connected-overline = ${xrdb:color7:#222}
 format-connected = <ramp-signal> <label-connected>
 label-connected = %local_ip%
